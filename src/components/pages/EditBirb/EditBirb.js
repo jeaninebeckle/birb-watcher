@@ -2,9 +2,11 @@ import React from 'react';
 
 class EditBirb extends React.Component {
   render() {
+    const { birbId } = this.props.match.params;
+
     return (
       <div className="EditBirb">
-        <h1>EditBirb</h1>
+        <h1>You are editing {birbId} </h1>
       </div>
     );
   }
