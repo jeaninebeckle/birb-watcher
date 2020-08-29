@@ -2,7 +2,12 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import connection from '../helpers/data/connection';
-import Navbar from '../javascripts/components/Navbar/Navbar';
+import Auth from '../components/pages/Auth/Auth';
+import Navbar from '../components/Navbar/Navbar';
+import EditBirb from '../components/pages/EditBirb/EditBirb';
+import NewBirb from '../components/pages/NewBirb/NewBirb';
+import Home from '../components/pages/Home/Home';
+import SingleBirb from '../components/pages/SingleBirb/SingleBirb';
 
 import './App.scss';
 
@@ -27,19 +32,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { authed } = this.state;
-
-    const loadComponent = () => {
-      if (authed) {
-        return <h1>Authed</h1>;
-      }
-      return '';
-    };
-
     return (
       <div className="App">
-        <Navbar authed={authed}/>
-        {loadComponent()}
+        <h1>Bird Watcher</h1>
+          <Navbar />
+          <Auth />
+
+          <EditBirb />
+          <Home />
+          <NewBirb />
+          <SingleBirb />
       </div>
     );
   }
