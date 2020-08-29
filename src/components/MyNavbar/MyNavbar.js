@@ -48,7 +48,7 @@ class MyNavbar extends React.Component {
               <NavLink tag={RRNavLink} to='/new'>New Birb</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={this.logoutClickEvent}>Log Out</NavLink>
+              <NavLink type="button" onClick={this.logoutClickEvent}>Log Out</NavLink>
             </NavItem>
           </Nav>
         );
