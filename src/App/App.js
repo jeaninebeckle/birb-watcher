@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import {
   BrowserRouter,
   Redirect,
@@ -9,7 +10,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import connection from '../helpers/data/connection';
 import Auth from '../components/pages/Auth/Auth';
-import Navbar from '../components/Navbar/Navbar';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
 import EditBirb from '../components/pages/EditBirb/EditBirb';
 import NewBirb from '../components/pages/NewBirb/NewBirb';
 import Home from '../components/pages/Home/Home';
@@ -57,7 +58,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
          <React.Fragment>
-           <Navbar />
+           <MyNavbar authed={authed}/>
            <div className="container">
              <Switch>
                <PrivateRoute path="/home" component={Home} authed={authed}/>
