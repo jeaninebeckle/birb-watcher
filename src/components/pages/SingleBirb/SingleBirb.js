@@ -15,9 +15,15 @@ class SingleBirb extends React.Component {
   }
 
   render() {
+    const { birb } = this.props;
+
     return (
-      <div className="SingleBirb">
-        <h1>SingleBirb</h1>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{birb.type}</h5>
+          <h6 className="card-subtitle mb-2 text-muted">Color: {birb.color} <br /> Size: {birb.size}</h6>
+          <p className="card-text">Location: {birb.location} <br /> Notes: {birb.notes}</p>
+        </div>
       </div>
     );
   }
