@@ -10,6 +10,7 @@ class BirbCards extends React.Component {
 
   render() {
     const { birb } = this.props;
+    console.warn(this.props);
 
     return (
       <div className="card">

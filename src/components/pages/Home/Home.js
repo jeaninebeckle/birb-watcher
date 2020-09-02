@@ -28,7 +28,7 @@ class Home extends React.Component {
   render() {
     const { birbs } = this.state;
 
-    const birbCards = birbs.map((birb) => <BirbCards key={birb.id} birb={birb} />);
+    const birbCards = birbs.map((birb) => <BirbCards key={birb.id} birb={birb}/>);
 
     return (
       <div className="Home">

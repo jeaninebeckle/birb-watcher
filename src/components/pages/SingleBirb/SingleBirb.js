@@ -1,5 +1,6 @@
 import React from 'react';
 import birbsData from '../../../helpers/data/birbsData';
+import BirbCards from '../../shared/BirbCards/BirbCards';
 
 class SingleBirb extends React.Component {
   state = {
@@ -15,16 +16,10 @@ class SingleBirb extends React.Component {
   }
 
   render() {
-    const { birb } = this.props;
+    const { birb } = this.state;
 
     return (
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">{birb.type}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Color: {birb.color} <br /> Size: {birb.size}</h6>
-          <p className="card-text">Location: {birb.location} <br /> Notes: {birb.notes}</p>
-        </div>
-      </div>
+      <BirbCards birb={birb}/>
     );
   }
 }
