@@ -1,7 +1,6 @@
 import React from 'react';
 import birbsData from '../../../helpers/data/birbsData';
 import BirbCards from '../../shared/BirbCards/BirbCards';
-// import birbShape from '../../../helpers/props/birbShape';
 
 class SingleBirb extends React.Component {
   state = {
@@ -23,7 +22,7 @@ class SingleBirb extends React.Component {
     const { birbId } = this.props.match.params;
     birbsData.deleteBirb(birbId)
       .then(() => {
-        console.warn('deleted');
+        this.props.history.push('/home');
       })
       .catch((err) => console.error('delete single birb failed', err));
   }
