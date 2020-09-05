@@ -17,7 +17,6 @@ class BirbCards extends React.Component {
 
   render() {
     const { birb } = this.props;
-    console.warn(this.props);
 
     return (
       <div className="card">
@@ -27,7 +26,7 @@ class BirbCards extends React.Component {
           <p className="card-text">Location: {birb.location} <br /> Notes: {birb.notes}</p>
           <Link to={`/birbs/${birb.id}`} className="btn btn-warning m-1">View</Link>
           <Link to={`/edit/${birb.id}`} className="btn btn-dark m-1">Edit</Link>
-          <button className="btn btn-danger m-1" onClick={this.deleteBirbEvent}><i class="fas fa-trash-alt"></i></button>
+          <button className="btn btn-danger m-1" onClick={this.deleteBirbEvent}><i className="fas fa-trash-alt"></i></button>
         </div>
       </div>
     );
