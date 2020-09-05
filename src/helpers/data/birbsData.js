@@ -14,4 +14,11 @@ const getSingleBirb = (birbId) => axios.get(`${baseUrl}/birbs/${birbId}.json`);
 
 const createBirb = (newBirb) => axios.post(`${baseUrl}/birbs.json`, newBirb);
 
-export default { getBirbsByUid, getSingleBirb, createBirb };
+const deleteBirb = (birbId) => axios.delete(`${baseUrl}/birbs/${birbId}.json`);
+
+export default {
+  getBirbsByUid,
+  getSingleBirb,
+  createBirb,
+  deleteBirb,
+};
