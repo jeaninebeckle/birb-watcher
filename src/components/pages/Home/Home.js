@@ -19,6 +19,14 @@ class Home extends React.Component {
     this.getBirbs();
   }
 
+  deleteBirb = (birbId) => {
+    birbsData.deleteBirb(birbId)
+      .then(() => {
+        this.getBirbs();
+      })
+      .catch((err) => console.error('delete birb failed', err));
+  }
+
   editBirbEvent = (e) => {
     e.preventDefault();
     const birbId = 'birb10000';
@@ -28,7 +36,7 @@ class Home extends React.Component {
   render() {
     const { birbs } = this.state;
 
-    const birbCards = birbs.map((birb) => <BirbCards key={birb.id} birb={birb}/>);
+    const birbCards = birbs.map((birb) => <BirbCards key={birb.id} birb={birb} deleteBirb={this.deleteBirb}/>);
 
     return (
       <div className="Home">
